@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>ur mom</title>
+  <title>FORM</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <style>
@@ -73,6 +73,13 @@
     .loginbackground-gridContainer {
       display: -ms-grid;
       display: grid;
+      -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end];
+      grid-template-columns: [start] 1fr [left-gutter] repeat(16, 86.6px) [left-gutter] 1fr [end];
+      -ms-grid-rows: [top] 1fr [top-gutter] (64px)[8] [bottom-gutter] 1fr [bottom];
+      grid-template-rows: [top] 1fr [top-gutter] repeat(8, 64px) [bottom-gutter] 1fr [bottom];
+      justify-content: center;
+      margin: 0 -2%;
+      transform: rotate(-12deg) skew(-12deg);
     }
 
     .box-divider--light-all-2 {
@@ -186,9 +193,7 @@
         rgba(0, 0, 0, 0) 0px 0px 0px 0px;
     }
 
-    .submit {
-      display: block;
-      padding: 12px 24px !important;
+    input[type="submit"] {
       background-color: rgb(84, 105, 212);
       box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
         rgba(0, 0, 0, 0) 0px 0px 0px 0px,
@@ -200,9 +205,6 @@
       color: #fff;
       font-weight: 600;
       cursor: pointer;
-      text-align: center;
-      border-radius: 3px;
-      
     }
 
     .field-checkbox input {
@@ -213,14 +215,79 @@
       min-height: unset;
     }
 
+    .field-checkbox label {
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+
+    a.ssolink {
+      display: block;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .footer-link span {
+      font-size: 14px;
+      text-align: center;
+    }
+
     .listing a {
       color: #697386;
       font-weight: 600;
       margin: 0 10px;
     }
 
+    .animationRightLeft {
+      animation: animationRightLeft 2s ease-in-out infinite;
+    }
+
+    .animationLeftRight {
+      animation: animationLeftRight 2s ease-in-out infinite;
+    }
+
+    .tans3s {
+      animation: animationLeftRight 3s ease-in-out infinite;
+    }
+
+    .tans4s {
+      animation: animationLeftRight 4s ease-in-out infinite;
+    }
+
+    @keyframes animationLeftRight {
+      0% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(1000px);
+      }
+
+      100% {
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes animationRightLeft {
+      0% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(-1000px);
+      }
+
+      100% {
+        transform: translateX(0px);
+      }
+    }
+
     .hidden {
       display: none;
+    }
+
+    p {
+      color: red;
     }
   </style>
 </head>
@@ -229,10 +296,41 @@
   <div class="login-root">
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
       <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root"
+              style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
       </div>
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>博览五千年，塑造当代贤</h1>
+          <h1>Ur name</h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
@@ -259,39 +357,37 @@
                   </a>
                 </div>
               </form>
-              <p class="hidden" id="fail-msg">Username or password incorrect</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    let uname;
-    let pword;
+    <script>
+      let uname;
+      let pword;
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        verifyLogin();
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          verifyLogin();
+        }
+      })
+
+      const verifyLogin = function () {
+        uname = document.getElementById("uname").value;
+        pword = document.getElementById("pword").value;
+
+        if (uname == "jw" && pword === "urmom") {
+          window.location.assign("login-successful.html");
+        } else if (uname == "admin" && pword === "123") {
+          window.location.assign("login-successful.html");
+        } else {
+          document.getElementById("fail-msg").classList.remove("hidden");
+        }
       }
-    })
 
-    const verifyLogin = function () {
-      uname = document.getElementById("uname").value;
-      pword = document.getElementById("pword").value;
-
-      if (uname == "jw" && pword === "urmom") {
-        window.location.assign("login-successful.html");
-      } else if (uname == "admin" && pword === "123") {
-        window.location.assign("login-successful.html");
-      } else {
-        document.getElementById("fail-msg").classList.remove("hidden");
-      }
-    }
-
-    document.addEventListener('contextmenu', event => event.preventDefault());
-  </script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </body>
 
 </html>

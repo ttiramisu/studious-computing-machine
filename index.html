@@ -368,31 +368,7 @@
       </div>
     </div>
 
-    <script>
-      let uname;
-      let pword;
-
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          verifyLogin();
-        }
-      })
-
-      const verifyLogin = function () {
-        uname = document.getElementById("uname").value;
-        pword = document.getElementById("pword").value;
-
-        if (uname == "jw" && pword === "urmom") {
-          window.location.assign("login-successful.html");
-        } else if (uname == "admin" && pword === "123") {
-          window.location.assign("login-successful.html");
-        } else {
-          document.getElementById("fail-msg").classList.remove("hidden");
-        }
-      }
-
-      document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

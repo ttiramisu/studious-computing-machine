@@ -1,5 +1,8 @@
 let uname;
 let pword;
+let showpwd;
+let input;
+let text;
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
@@ -23,5 +26,25 @@ const verifyLogin = function () {
     document.getElementById("fail-msg").classList.remove("hidden");
   }
 }
+
+const showPwd = function () {
+  showpwd = document.getElementById("pword");
+  if (showpwd.type === "password") {
+    showpwd.type = "text";
+  } else {
+    showpwd.type = "password";
+  }
+}
+
+input = document.getElementById("pword");
+text = document.getElementById("caps-text");
+
+input.addEventListener("keyup", function (event) {
+  if (event.getModifierState("CapsLock")) {
+    document.getElementById("caps-text").classList.remove("hidden");
+  } else {
+    document.getElementById("caps-text").classList.add("hidden");
+  }
+});
 
 document.addEventListener('contextmenu', event => event.preventDefault());

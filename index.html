@@ -287,7 +287,7 @@
     }
 
     .hidden {
-      display: none;
+      visibility: hidden;
     }
 
     p {
@@ -346,10 +346,12 @@
                   <input type="text" name="uname" id="uname">
                 </div>
                 <div class="field padding-bottom--24">
-                  <div class="grid--50-50">
-                    <label for="password">Password</label>
-                  </div>
+                  <label for="password">Password</label>
                   <input type="password" id="pword" name="pword">
+                  <p class="hidden" id="caps-text">Caps Lock is on!</p>
+                </div>
+                <div class="padding-bottom--24">
+                  <input type="checkbox" onclick="showPwd()"> Show Password
                 </div>
                 <div class="field padding-bottom--24">
                   <a href="#" class="submit" onclick="verifyLogin()">

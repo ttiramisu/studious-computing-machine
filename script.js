@@ -20,7 +20,7 @@ const verifyLogin = function () {
     window.location.assign("login-successful.html");
   } else if (uname == "hkr" && pword === "kid") {
     window.location.assign("login-successful.html");
-  } else if (uname == "jerry" && pword === "troll 2") {
+  } else if (uname == "jerry" && pword === "troll2") {
     window.location.assign("login-successful.html");
   } else {
     document.getElementById("fail-msg").classList.remove("hidden");

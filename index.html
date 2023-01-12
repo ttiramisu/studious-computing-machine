@@ -192,7 +192,8 @@
         rgba(0, 0, 0, 0) 0px 0px 0px 0px;
     }
 
-    .submit {
+    .submit,
+    input[type=submit] {
       display: block;
       padding: 12px 24px !important;
       background-color: rgb(84, 105, 212);
@@ -208,6 +209,7 @@
       cursor: pointer;
       text-align: center;
       border-radius: 3px;
+      height: 45px !important;
     }
 
     .field-checkbox input {
@@ -342,22 +344,19 @@
               <form id="stripe-login">
                 <div class="field padding-bottom--24">
                   <label for="uname">Username</label>
-                  <input type="text" name="uname" id="uname">
+                  <input type="text" name="uname" id="uname" required>
                 </div>
                 <div class="field padding-bottom--24">
                   <label for="password">Password</label>
-                  <input type="password" id="pword" name="pword">
+                  <input type="password" id="pword" name="pword" required>
                   <p class="hidden" id="caps-text">Caps Lock is on!</p>
                 </div>
                 <div class="padding-bottom--24">
                   <input type="checkbox" onclick="showPwd()"> Show Password
                 </div>
                 <div class="field padding-bottom--24">
+                  <!-- <input type="submit" value="Submit"> -->
                   <a href="#" class="submit" onclick="verifyLogin()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
                     Submit
                   </a>
                 </div>
@@ -370,7 +369,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="devtools.js"></script>
 </body>
 
 </html>

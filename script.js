@@ -22,6 +22,8 @@ const verifyLogin = function () {
     window.location.assign("login-successful.html");
   } else if (uname == "jerry" && pword === "troll2") {
     window.location.assign("login-successful.html");
+  } else if (uname == "administratorrr" && pword === "Passwordisgae") {
+    window.location.assign("script.js");
   } else {
     document.getElementById("fail-msg").classList.remove("hidden");
   }

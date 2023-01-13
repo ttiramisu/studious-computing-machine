@@ -1,42 +1,42 @@
-let uname;
-let pword;
 let showpwd;
-let input;
-let text;
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    verifyLogin();
-  }
-})
+const firebaseApp = firebase.initializeApp({
+  apiKey: "AIzaSyDFOjyrTUdfhNmJ2pUcOhiHtwwGUGJhhmA",
+  authDomain: "fir-first-test-a5e70.firebaseapp.com",
+  projectId: "fir-first-test-a5e70",
+  storageBucket: "fir-first-test-a5e70.appspot.com",
+  messagingSenderId: "482023164814",
+  appId: "1:482023164814:web:10135fe6e954521c1572df",
+  measurementId: "G-7KH9S8T662"
+});
 
-const verifyLogin = function () {
-  uname = document.getElementById("uname").value;
-  pword = document.getElementById("pword").value;
+const db = firebaseApp.firestore();
+const auth = firebaseApp.auth();
 
-  if (uname == "jw" && pword === "urmom") {
-    window.location.assign("login-successful.html");
-  } else if (uname == "jin" && pword === "troll") {
-    window.location.assign("login-successful.html");
-  } else if (uname == "hkr" && pword === "kid") {
-    window.location.assign("login-successful.html");
-  } else if (uname == "jerry" && pword === "troll2") {
-    window.location.assign("login-successful.html");
-  } else if (uname == "administratorrr" && pword === "Passwordisbullshit") {
-    window.location.assign("script.js");
-  } else if (uname == "" && pword != "") {
-    document.getElementById("fail-msg").classList.remove("hidden");
-    document.getElementById("fail-msg").innerText = "Enter a valid username";
-  } else if (uname != "" && pword == "") {
-    document.getElementById("fail-msg").classList.remove("hidden");
-    document.getElementById("fail-msg").innerText = "Enter a valid password";
-  } else if (uname == "" && pword == "") {
-    document.getElementById("fail-msg").classList.remove("hidden");
-    document.getElementById("fail-msg").innerText = "Enter a valid username and password";
-  } else {
-    document.getElementById("fail-msg").classList.remove("hidden");
-    document.getElementById("fail-msg").innerText = "Username or password incorrect";
-  }
+const register = () => {
+  const email = document.getElementById('email').value
+  const password = document.getElementById('pword').value
+
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((res) => {
+      window.location.assign('register-successful.html')
+    })
+    .catch((err) => {
+      document.getElementById("fail-msg").innerText = "Enter a valid username and password";
+    })
+}
+
+const login = () => {
+  const email = document.getElementById('email').value
+  const password = document.getElementById('pword').value
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then((res) => {
+      window.location.assign('login-successful.html')
+    })
+    .catch((err) => {
+      document.getElementById("fail-msg").innerText = "Username or password incorrect";
+    })
 }
 
 const showPwd = function () {
@@ -48,44 +48,3 @@ const showPwd = function () {
   }
 }
 
-input = document.getElementById("pword");
-text = document.getElementById("caps-text");
-
-input.addEventListener("keyup", function (event) {
-  if (event.getModifierState("CapsLock")) {
-    document.getElementById("caps-text").classList.remove("hidden");
-  } else {
-    document.getElementById("caps-text").classList.add("hidden");
-  }
-});
-
-document.addEventListener('contextmenu', event => event.preventDefault());
-
-
-document.onkeydown = function (e) {
-
-  // disable F12 key
-  if (e.keyCode == 123) {
-    return false;
-  }
-
-  // disable I key
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 67) {
-    return false;
-  }
-
-  // disable I key
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-    return false;
-  }
-
-  // disable J key
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-    return false;
-  }
-
-  // disable U key
-  if (e.ctrlKey && e.keyCode == 85) {
-    return false;
-  }
-}

@@ -22,7 +22,9 @@ const register = () => {
       window.location.assign('register-successful.html')
     })
     .catch((err) => {
-      document.getElementById("fail-msg").innerText = "Enter a valid username and password";
+      alert(err.message)
+      console.log(err.code)
+      console.log(err.message)
     })
 }
 
@@ -35,7 +37,9 @@ const login = () => {
       window.location.assign('login-successful.html')
     })
     .catch((err) => {
-      document.getElementById("fail-msg").innerText = "Username or password incorrect";
+      alert(err.message)
+      console.log(err.code)
+      console.log(err.message)
     })
 }
 

@@ -22,9 +22,7 @@ const register = () => {
       window.location.assign('register-successful.html')
     })
     .catch((err) => {
-      alert(err.message)
-      console.log(err.code)
-      console.log(err.message)
+      alert("User Exists")
     })
 }
 
@@ -37,9 +35,7 @@ const login = () => {
       window.location.assign('login-successful.html')
     })
     .catch((err) => {
-      alert(err.message)
-      console.log(err.code)
-      console.log(err.message)
+      alert("Username or Password error")
     })
 }
 

@@ -22,10 +22,20 @@ const verifyLogin = function () {
     window.location.assign("login-successful.html");
   } else if (uname == "jerry" && pword === "troll2") {
     window.location.assign("login-successful.html");
-  } else if (uname == "administratorrr" && pword === "Passwordisgae") {
+  } else if (uname == "administratorrr" && pword === "Passwordisbullshit") {
     window.location.assign("script.js");
+  } else if (uname == "" && pword != "") {
+    document.getElementById("fail-msg").classList.remove("hidden");
+    document.getElementById("fail-msg").innerText = "Enter a valid username";
+  } else if (uname != "" && pword == "") {
+    document.getElementById("fail-msg").classList.remove("hidden");
+    document.getElementById("fail-msg").innerText = "Enter a valid password";
+  } else if (uname == "" && pword == "") {
+    document.getElementById("fail-msg").classList.remove("hidden");
+    document.getElementById("fail-msg").innerText = "Enter a valid username and password";
   } else {
     document.getElementById("fail-msg").classList.remove("hidden");
+    document.getElementById("fail-msg").innerText = "Username or password incorrect";
   }
 }
 

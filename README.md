@@ -6,7 +6,7 @@ My First Attempt at building a login and sign up with a database.
 
 ## Screenshots
 
-![App Screenshot]([/screenshot.png](https://i.ibb.co/XDS8mVG/Screenshot.png))
+![App Screenshot](https://i.ibb.co/XDS8mVG/Screenshot.png)
 
 
 ## Acknowledgements

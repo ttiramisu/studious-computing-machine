@@ -6,7 +6,7 @@ My First Attempt at building a login and sign up with a database.
 
 ## Screenshots
 
-![App Screenshot](screenshot.png)
+![App Screenshot](/screenshot.png)
 
 
 ## Acknowledgements

@@ -166,6 +166,11 @@ label {
   align-items: center;
 }
 
+input {
+  border-radius: 3px;
+  border: 1px solid #000;
+}
+
 .field input {
   font-size: 16px;
   line-height: 28px;

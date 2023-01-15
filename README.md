@@ -13,6 +13,7 @@ My First Attempt at building a login and sign up with a database.
 
  - Google SSO
  - Store Data in Firebase
+ - Retreive the data in Firebase
 
 
 ## Acknowledgements

@@ -9,6 +9,12 @@ My First Attempt at building a login and sign up with a database.
 ![App Screenshot](https://i.ibb.co/XDS8mVG/Screenshot.png)
 
 
+## What I'm adding/planning to add
+
+ - [Google SSO]
+ - [Store Data in Firebase]
+
+
 ## Acknowledgements
 
  - [Stack Findover](https://codepen.io/stack-findover/pen/OJRvPQv)

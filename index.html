@@ -79,7 +79,9 @@
                   </a>
                 </div>
                 <div class="field">
-                  <a class="ssolink submit-signup" data-onsuccess="Gsignin">Sign in with google</a>
+                  <div class="g-signin2" data-onsuccess="onGoogleSignIn">
+                    <a class="ssolink submit-signup" href="#">Sign in with google</a>
+                  </div>
                 </div>
               </form>
               <p class="hidden" id="fail-msg">Username or password incorrect</p>

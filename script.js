@@ -46,17 +46,16 @@ const login = () => {
     })
 }
 
-const Gsignin = (googleUser) => {
+function onGoogleSignIn(googleUser) {
   var id_token = googleUser.getAuthResponse().id_token;
   var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
 
   firebase.auth().signInWithCredential(credential)
-    .then(function (res) {
-      alert("Google sign-in successful");
-      window.location.assign('login-successful.html')
+    .then(function(response) {
+      console.log("Google sign-in successful");
     })
-    .catch(function (err) {
-      alert(error.message);
+    .catch(function(error) {
+      console.log(error.message);
     });
 }
 

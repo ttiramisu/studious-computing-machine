@@ -10,6 +10,13 @@ const firebaseApp = firebase.initializeApp({
   measurementId: "G-7KH9S8T662"
 });
 
+gapi.load('auth2', function () {
+  gapi.auth2.init({
+    client_id: '482023164814-j6j2uc5imchi8pj76gp22qu2muud7gdv.apps.googleusercontent.com',
+  });
+});
+
+
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 
@@ -38,6 +45,21 @@ const login = () => {
       alert("Username or Password error")
     })
 }
+
+const Gsignin = (googleUser) => {
+  var id_token = googleUser.getAuthResponse().id_token;
+  var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
+
+  firebase.auth().signInWithCredential(credential)
+    .then(function (res) {
+      alert("Google sign-in successful");
+      window.location.assign('login-successful.html')
+    })
+    .catch(function (err) {
+      alert(error.message);
+    });
+}
+
 
 const showPwd = function () {
   showpwd = document.getElementById("pword");

@@ -102,17 +102,15 @@
 
     const signInWithGoogleButton = document.getElementById('test')
     const signInWithGoogle = () => {
-
       const googleProvider = new firebase.auth.GoogleAuthProvider();
 
       auth.signInWithPopup(googleProvider)
-      .then(() => {
-        window.location.assign('login-successful.html')
-      })
-      .catch(error => {
-        console.error(error);
-      })
-
+        .then(() => {
+          window.location.assign('login-successful.html')
+        })
+        .catch(error => {
+          console.error(error);
+        })
     }
 
     gapi.load('auth2', function () {

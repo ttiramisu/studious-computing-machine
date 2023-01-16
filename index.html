@@ -80,7 +80,7 @@
                 </div>
                 <!-- Test Scripts -->
                 <div class="field padding-bottom--24">
-                  <a href="#" class="submit-signup" onclick="onGoogleSignIn(googleUser)">
+                  <a href="#" class="submit-signup" id="test" onclick="onGoogleSignIn(googleUser)">
                     Sign in with Google
                   </a>
                 </div>
@@ -97,29 +97,42 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
   <!-- TEST SCRIPTS -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
   <script>
-    const init = function() {
+
+    const signInWithGoogleButton = document.getElementById('test')
+    const signInWithGoogle = () => {
+
+      const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+      auth.signInWithPopup(googleProvider)
+      .then(() => {
+        window.location.assign('login-successful.html')
+      })
+      .catch(error => {
+        console.error(error);
+      })
+
+    }
 
     gapi.load('auth2', function () {
       gapi.auth2.init({
-        client_id: '482023164814-j6j2uc5imchi8pj76gp22qu2muud7gdv.apps.googleusercontent.com',
-      });
-    });
-  };
+        client_id: '482023164814-j6j2uc5imchi8pj76gp22qu2muud7gdv.apps.googleusercontent.com'
+      })
+    })
 
-    function onGoogleSignIn(googleUser) {
-      var id_token = googleUser.getAuthResponse().id_token;
-      var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
+    // function onGoogleSignIn(googleUser) {
+    //   var id_token = googleUser.getAuthResponse().id_token;
+    //   var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
 
-      firebase.auth().signInWithCredential(credential)
-        .then(function (response) {
-          console.log("Google sign-in successful");
-        })
-        .catch(function (error) {
-          console.log(error.message);
-        });
-    }
+    //   firebase.auth().signInWithCredential(credential)
+    //     .then(function (response) {
+    //       console.log("Google sign-in successful");
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error.message);
+    //     });
+    // }
 
   </script>
   <!-- TEST SCRIPTS -->

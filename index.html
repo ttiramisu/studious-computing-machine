@@ -99,12 +99,14 @@
   <!-- TEST SCRIPTS -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script>
+    const init = function() {
 
-    const gSignIn = firebase.load('auth2', function () {
-      firebase.auth2.init({
+    gapi.load('auth2', function () {
+      gapi.auth2.init({
         client_id: '482023164814-j6j2uc5imchi8pj76gp22qu2muud7gdv.apps.googleusercontent.com',
       });
     });
+  };
 
     function onGoogleSignIn(googleUser) {
       var id_token = googleUser.getAuthResponse().id_token;

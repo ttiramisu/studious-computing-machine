@@ -39,6 +39,11 @@ const login = () => {
     })
 }
 
+const resetPwd = () => {
+  const email = document.getElementById('email').value
+  auth.sendPasswordResetEmail(email)
+}
+
 const showPwd = function () {
   showpwd = document.getElementById("pword");
   if (showpwd.type === "password") {

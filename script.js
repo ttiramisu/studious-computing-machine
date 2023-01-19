@@ -13,6 +13,15 @@ const firebaseApp = firebase.initializeApp({
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 
+// auth.useDeviceLanguage();
+
+// window.recaptchaVerifier = new RecaptchaVerifier('signup', {
+//   'size': 'invisible',
+//   'callback': (response) => {
+//     onSignInSubmit();
+//   }
+// }, auth);
+
 const verifyAcc = () => {
   const email = document.getElementById('email').value
   auth.sendEmailVerification(email)
@@ -32,7 +41,6 @@ const register = () => {
 
   auth.sendEmailVerification(email)
     .then(() => {
-      // Email verification sent!
       alert(`An email verification link has been sent to ${email}`);
       auth.createUserWithEmailAndPassword(email, password)
         .then((res) => {

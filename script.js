@@ -41,8 +41,8 @@ const login = () => {
 
 const resetPwd = () => {
   const email = document.getElementById('email').value
-  let emailResetText = document.getElementById('pwdresetemailtext')
-  emailResetText.innerHTML = `Password reset Email sent to the following Email ${email}`
+  // let emailResetText = document.getElementById('pwdresetemailtext')
+  // emailResetText.innerHTML = `Password reset Email sent to the following Email ${email}`
 
   auth.sendPasswordResetEmail(email)
 }

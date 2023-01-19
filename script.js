@@ -1,3 +1,6 @@
+let one = one
+
+
 let showpwd;
 
 const firebaseApp = firebase.initializeApp({

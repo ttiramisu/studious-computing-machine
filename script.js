@@ -1,5 +1,9 @@
 let one = one
-
+if (bowser.chrome) {
+  location.window,assign("index.html");
+} else {
+  window.close;
+}
 
 let showpwd;
 

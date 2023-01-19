@@ -78,7 +78,7 @@
                     Sign up
                   </a>
                   <br>
-                  <a href="#" onclick="resetPwd()">Forgot Password</a>
+                  <a href="#" id="Btn" onclick="resetPwd()">Forgot Password</a>
                 </div>
                 <!-- Test Scripts -->
                 <!-- <div class="field padding-bottom--24">
@@ -95,6 +95,12 @@
       </div>
     </div>
   </div>
+  <div id="Modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Password reset email sent to the following email</p>
+    </div>
+  </div>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
@@ -102,7 +108,7 @@
   <!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
   <script> -->
 
-    <!-- const signInWithGoogleButton = document.getElementById('test')
+  <!-- const signInWithGoogleButton = document.getElementById('test')
     const signInWithGoogle = () => {
       const googleProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -121,7 +127,7 @@
       })
     }) -->
 
-    <!-- // function onGoogleSignIn(googleUser) {
+  <!-- // function onGoogleSignIn(googleUser) {
     //   var id_token = googleUser.getAuthResponse().id_token;
     //   var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
 

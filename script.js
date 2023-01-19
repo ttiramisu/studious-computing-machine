@@ -22,40 +22,31 @@ const auth = firebaseApp.auth();
 //   }
 // }, auth);
 
-const verifyAcc = () => {
-  const email = document.getElementById('email').value
-  auth.sendEmailVerification(email)
-    .then(() => {
-      // Email verification sent!
-      alert(`An email verification link has been sent to ${email}`);
-    })
+// const verifyAcc = () => {
+//   const email = document.getElementById('email').value
+//   auth.sendEmailVerification(email)
+//     .then(() => {
+//       // Email verification sent!
+//       alert(`An email verification link has been sent to ${email}`);
+//     })
 
-    .catch((err) => {
-      alert(err)
-    });
-}
+//     .catch((err) => {
+//       alert(err)
+//     });
+// }
 
 const register = () => {
   const email = document.getElementById('email').value
   const password = document.getElementById('pword').value
-
-  auth.sendEmailVerification(email)
-    .then(() => {
-      alert(`An email verification link has been sent to ${email}`);
-      auth.createUserWithEmailAndPassword(email, password)
-        .then((res) => {
-          window.location.assign('register-successful.html')
-        })
-        .catch((err) => {
-          alert(err)
-        })
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((res) => {
+      window.location.assign('register-successful.html')
     })
-
     .catch((err) => {
       alert(err)
-    });
-
+    })
 }
+
 
 const login = () => {
   const email = document.getElementById('email').value

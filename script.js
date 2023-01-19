@@ -13,17 +13,40 @@ const firebaseApp = firebase.initializeApp({
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 
+const verifyAcc = () => {
+  const email = document.getElementById('email').value
+  auth.sendEmailVerification(email)
+    .then(() => {
+      // Email verification sent!
+      alert(`An email verification link has been sent to ${email}`);
+    })
+
+    .catch((error) => {
+      alert(err)
+    });
+}
+
 const register = () => {
   const email = document.getElementById('email').value
   const password = document.getElementById('pword').value
 
-  auth.createUserWithEmailAndPassword(email, password)
-    .then((res) => {
-      window.location.assign('register-successful.html')
+  auth.sendEmailVerification(email)
+    .then(() => {
+      // Email verification sent!
+      alert(`An email verification link has been sent to ${email}`);
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((res) => {
+          window.location.assign('register-successful.html')
+        })
+        .catch((err) => {
+          alert(err)
+        })
     })
-    .catch((err) => {
+
+    .catch((error) => {
       alert(err)
-    })
+    });
+
 }
 
 const login = () => {

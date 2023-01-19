@@ -21,7 +21,7 @@ const verifyAcc = () => {
       alert(`An email verification link has been sent to ${email}`);
     })
 
-    .catch((error) => {
+    .catch((err) => {
       alert(err)
     });
 }
@@ -43,7 +43,7 @@ const register = () => {
         })
     })
 
-    .catch((error) => {
+    .catch((err) => {
       alert(err)
     });
 

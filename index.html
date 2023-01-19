@@ -81,11 +81,11 @@
                   <a href="#" id="Btn" onclick="resetPwd()">Forgot Password</a>
                 </div>
                 <!-- Test Scripts -->
-                <!-- <div class="field padding-bottom--24">
+                <div class="field padding-bottom--24">
                   <a href="#" class="submit-signup" id="test" onclick="onGoogleSignIn(googleUser)">
                     Sign in with Google
                   </a>
-                </div> -->
+                </div>
                 <!-- Test Scripts -->
               </form>
               <p class="hidden" id="fail-msg">Username or password incorrect</p>
@@ -105,10 +105,10 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
   <!-- TEST SCRIPTS -->
-  <!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
-  <script> -->
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+  <script>
 
-  <!-- const signInWithGoogleButton = document.getElementById('test')
+    const signInWithGoogleButton = document.getElementById('test')
     const signInWithGoogle = () => {
       const googleProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -125,22 +125,22 @@
       gapi.auth2.init({
         client_id: '482023164814-j6j2uc5imchi8pj76gp22qu2muud7gdv.apps.googleusercontent.com'
       })
-    }) -->
+    })
 
-  <!-- // function onGoogleSignIn(googleUser) {
-    //   var id_token = googleUser.getAuthResponse().id_token;
-    //   var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
+    function onGoogleSignIn(googleUser) {
+      let id_token = googleUser.getAuthResponse().id_token;
+      let credential = firebase.auth.GoogleAuthProvider.credential(id_token);
 
-    //   firebase.auth().signInWithCredential(credential)
-    //     .then(function (response) {
-    //       console.log("Google sign-in successful");
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error.message);
-    //     });
-    // }
+      auth.signInWithCredential(credential)
+        .then(function (response) {
+          console.log("Google sign-in successful");
+        })
+        .catch(function (error) {
+          console.log(error.message);
+        });
+    }
 
-  </script> -->
+  </script>
   <!-- TEST SCRIPTS -->
   <script src="script.js"></script>
   <script>

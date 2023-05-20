@@ -41,7 +41,7 @@ const register = () => {
   const password = document.getElementById('pword').value
   auth.createUserWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('register-successful.html')
+      window.location.assign('chat.html')
     })
     .catch((err) => {
       alert(err)

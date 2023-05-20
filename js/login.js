@@ -12,8 +12,8 @@ const firebaseApp = {
   measurementId: "G-7KH9S8T662"
 };
 
-const db = firebaseApp.firestore();
-const auth = firebaseApp.auth();
+const db = firebase.firestore();
+const auth = firebase.auth();
 
 // auth.useDeviceLanguage();
 

@@ -17,30 +17,19 @@ firebase.initializeApp(firebaseApp);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-const sendEmailVerification = () => {
-  const user = auth.currentUser;
-  user.sendEmailVerification()
-    .then(() => {
-      // Email verification sent!
-      alert(`An email verification link has been sent to ${user.email}`);
-    })
-    .catch((err) => {
-      alert(err);
-    });
-};
-
 const register = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('pword').value;
+
   auth.createUserWithEmailAndPassword(email, password)
     .then((res) => {
+      sendEmailVerification();
       window.location.assign('https://fire-chatty.vercel.app/');
     })
     .catch((err) => {
       alert(err);
     });
 };
-
 
 const login = () => {
   const email = document.getElementById('email').value;
@@ -48,7 +37,23 @@ const login = () => {
 
   auth.signInWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('https://fire-chatty.vercel.app/');
+      if (res.user.emailVerified) {
+        window.location.assign('https://fire-chatty.vercel.app/');
+      } else {
+        alert('Please verify your email before logging in.');
+      }
+    })
+    .catch((err) => {
+      alert(err);
+    });
+};
+
+const sendEmailVerification = () => {
+  const user = auth.currentUser;
+  user.sendEmailVerification()
+    .then(() => {
+      // Email verification sent!
+      alert(`An email verification link has been sent to ${user.email}`);
     })
     .catch((err) => {
       alert(err);

@@ -23,18 +23,18 @@ const auth = firebaseApp.auth();
 //   }
 // }, auth);
 
-// const verifyAcc = () => {
-//   const email = document.getElementById('email').value
-//   auth.sendEmailVerification(email)
-//     .then(() => {
-//       // Email verification sent!
-//       alert(`An email verification link has been sent to ${email}`);
-//     })
+const verifyAcc = () => {
+  const email = document.getElementById('email').value
+  auth.sendEmailVerification(email)
+    .then(() => {
+      // Email verification sent!
+      alert(`An email verification link has been sent to ${email}`);
+    })
 
-//     .catch((err) => {
-//       alert(err)
-//     });
-// }
+    .catch((err) => {
+      alert(err)
+    });
+}
 
 const register = () => {
   const email = document.getElementById('email').value

@@ -17,61 +17,51 @@ firebase.initializeApp(firebaseApp);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-// auth.useDeviceLanguage();
-
-// window.recaptchaVerifier = new RecaptchaVerifier('signup', {
-//   'size': 'invisible',
-//   'callback': (response) => {
-//     onSignInSubmit();
-//   }
-// }, auth);
-
-const verifyAcc = () => {
-  const email = document.getElementById('email').value
-  auth.sendEmailVerification(email)
+const sendEmailVerification = () => {
+  const user = auth.currentUser;
+  user.sendEmailVerification()
     .then(() => {
       // Email verification sent!
-      alert(`An email verification link has been sent to ${email}`);
+      alert(`An email verification link has been sent to ${user.email}`);
     })
-
     .catch((err) => {
-      alert(err)
+      alert(err);
     });
-}
+};
 
 const register = () => {
-  const email = document.getElementById('email').value
-  const password = document.getElementById('pword').value
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('pword').value;
   auth.createUserWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('https://fire-chatty.vercel.app/')
+      window.location.assign('https://fire-chatty.vercel.app/');
     })
     .catch((err) => {
-      alert(err)
-    })
-}
+      alert(err);
+    });
+};
 
 
 const login = () => {
-  const email = document.getElementById('email').value
-  const password = document.getElementById('pword').value
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('pword').value;
 
   auth.signInWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('https://fire-chatty.vercel.app/')
+      window.location.assign('https://fire-chatty.vercel.app/');
     })
     .catch((err) => {
-      alert(err)
-    })
-}
+      alert(err);
+    });
+};
 
 const resetPwd = () => {
-  const email = document.getElementById('email').value
+  const email = document.getElementById('email').value;
   // let emailResetText = document.getElementById('pwdresetemailtext')
   // emailResetText.innerHTML = `Password reset Email sent to the following Email ${email}`
 
-  auth.sendPasswordResetEmail(email)
-}
+  auth.sendPasswordResetEmail(email);
+};
 
 const showPwd = function () {
   showpwd = document.getElementById("pword");
@@ -80,4 +70,4 @@ const showPwd = function () {
   } else {
     showpwd.type = "password";
   }
-}
+};

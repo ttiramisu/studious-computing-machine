@@ -44,7 +44,7 @@ const register = () => {
   const password = document.getElementById('pword').value
   auth.createUserWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('chat.html')
+      window.location.assign('https://fire-chatty.vercel.app/')
     })
     .catch((err) => {
       alert(err)
@@ -58,7 +58,7 @@ const login = () => {
 
   auth.signInWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('chat.html')
+      window.location.assign('https://fire-chatty.vercel.app/')
     })
     .catch((err) => {
       alert(err)

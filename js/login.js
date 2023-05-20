@@ -1,7 +1,7 @@
 // let one = one
 let showpwd;
 
-const firebaseConfig = {
+const firebaseApp = {
   apiKey: "AIzaSyDFOjyrTUdfhNmJ2pUcOhiHtwwGUGJhhmA",
   authDomain: "fir-first-test-a5e70.firebaseapp.com",
   databaseURL: "https://fir-first-test-a5e70-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -42,7 +42,7 @@ const register = () => {
   const password = document.getElementById('pword').value
   auth.createUserWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('https://fire-chatty.vercel.app')
+      window.location.assign('chat.html')
     })
     .catch((err) => {
       alert(err)
@@ -56,7 +56,7 @@ const login = () => {
 
   auth.signInWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('https://fire-chatty.vercel.app')
+      window.location.assign('chat.html')
     })
     .catch((err) => {
       alert(err)

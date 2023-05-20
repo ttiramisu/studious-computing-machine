@@ -55,7 +55,7 @@ const login = () => {
 
   auth.signInWithEmailAndPassword(email, password)
     .then((res) => {
-      window.location.assign('login-successful.html')
+      window.location.assign('chat.html')
     })
     .catch((err) => {
       alert(err)

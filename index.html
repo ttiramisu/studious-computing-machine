@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FORM</title>
+  <title>Fire Chat</title>
   <link rel="stylesheet" href="css/login.css" />
 </head>
 
@@ -46,7 +46,7 @@
       </div>
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Form Name</h1>
+          <h1>Login to your Fire Chat Account</h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
@@ -67,6 +67,7 @@
                 <div class="field padding-bottom--24">
                   <!-- <input type="submit" value="Submit"> -->
                   <a href="#" class="submit" onclick="login()"> Login </a>
+                  <a href="#" class="submit-signup" onclick="verifyAcc()">Send Email Verification</button>
                 </div>
               </form>
             </div>
@@ -82,7 +83,6 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-  <!------------------------------------->
 
   <script src="js/login.js"></script>
   <script>
